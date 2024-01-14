@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temprature Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <form>
+
+        <div class="d1">
+            <h4>Degrees</h4>
+            <input type="number" id="deg" name="deg" class="num" />
+        </div>
+        
+        <div class="d2">
+            <h4>Type</h4>
+            <select id="type" class="type">
+                <option name="units" id="units" selected>Types</option>
+                <option name="units" id="units" value="Celcius">Celcius</option>
+                <option name="units" id="units" value="Fahrenheit">Fahrenheit</option>
+            </select>
+        </div>
+        
+      </form>
+      <button class="btn" onclick="convert()">Convert</button>
+      
+        <div class="sh">
+          <span id="show1"></span>
+        </div>
+      
+        <div class="sun">
+          <img src="sun.png" alt="" class="src">
+        </div>
+
+        <div class="cloud">
+          <img src="cloud1.png">
+        </div>
+
+    </div>
+
+    <script>
+      function convert() {
+        var deg = document.getElementById("deg").value;
+        
+        var type = document.getElementById("type").value;
+       
+
+        if (type==="Celcius") {
+         
+         var far;
+         far=deg * (9/5) +32;
+          document.getElementById("show1").innerHTML = `${far}°Farenheit`;
+        } else {
+        
+          var cel;
+          cel=(deg - 32) * (5/9);
+          document.getElementById("show1").innerHTML = `${cel}°Celsius`;
+        }
+      }
+    </script>
+  </body>
+</html>
